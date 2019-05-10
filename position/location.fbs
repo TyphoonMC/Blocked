@@ -1,0 +1,12 @@
+namespace Blocked.Position;
+
+struct Location2 {
+  x:float;
+  y:float;
+}
+
+struct Location3 {
+  x:float;
+  y:float;
+  z:float;
+}

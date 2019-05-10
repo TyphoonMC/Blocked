@@ -1,0 +1,9 @@
+include "position/location.fbs";
+include "position/rotation.fbs";
+
+namespace Blocked.Position;
+
+struct Position {
+	location:Location3;
+	rotation:Rotation;
+}

@@ -1,0 +1,6 @@
+namespace Blocked.Position;
+
+struct Rotation {
+    yaw:double;
+    pitch:double;
+}

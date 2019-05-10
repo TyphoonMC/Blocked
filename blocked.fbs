@@ -1,0 +1,13 @@
+include "Position/position.fbs";
+
+namespace Blocked;
+
+table SpawnPosition {
+    position:Position.Position;
+}
+
+rpc_service SpawnPosition {
+    Retreive(SpawnPosition):SpawnPosition (streaming: "client");
+}
+
+root_type SpawnPosition;
