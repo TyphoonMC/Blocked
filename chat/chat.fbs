@@ -1,0 +1,30 @@
+namespace Blocked.Chat;
+
+enum Action : byte { 
+    // ClickAction
+    OpenUrl, RunCommand, SuggestCommand, ChangePage,
+    // HoverAction
+    ShowText,  ShowItem, ShowEntity
+ }
+
+table Event {
+    action:Action;
+    value:string;
+}
+
+table ChatComponent {
+    text:string;
+    bold:bool;
+    italic:bool;
+    underlined:bool;
+    strikeThrough:bool;
+    obfuscated:bool;
+    color:uint32;
+    insertion:string;
+    events:[Event];
+    extra:[ChatComponent];
+}
+
+rpc_service Chat {
+    SendMessage(ChatComponent):ChatComponent (streaming: "bidi");
+}
